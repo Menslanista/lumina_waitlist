@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Peace | Conscious Visionary Architect & AI Ethics Pioneer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --cosmic-purple: #8A2BE2;
+            --neural-gold: #FFD700;
+            --quantum-blue: #00BFFF;
+            --conscious-green: #32CD32;
+            --deep-space: #0a0a2a;
+            --stardust-white: #f0f8ff;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--deep-space) 0%, #1a1a4a 100%);
+            color: var(--stardust-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 4px solid var(--cosmic-purple);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--quantum-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--neural-gold), var(--quantum-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--quantum-blue);
+        }
+
+        .mission-statement {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--quantum-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--stardust-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--quantum-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cosmic-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--neural-gold);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cosmic-purple), var(--quantum-blue));
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: rgba(138, 43, 226, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .about-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .neural-network {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--neural-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neural-gold);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 50, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--quantum-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--neural-gold);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .project-tag {
+            background: rgba(0, 191, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 191, 255, 0.5);
+        }
+
+        /* Philosophy Section */
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 40px 0;
+            padding: 30px;
+            border-left: 4px solid var(--cosmic-purple);
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: rgba(20, 20, 50, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(138, 43, 226, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--quantum-blue);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--neural-gold);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(138, 43, 226, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            color: var(--quantum-blue);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(20, 20, 50, 0.7);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            border-radius: 5px;
+            color: var(--stardust-white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--quantum-blue);
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--quantum-blue));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 20, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(138, 43, 226, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--stardust-white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.5);
+        }
+
+        .social-link:hover {
+            background: var(--cosmic-purple);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-image">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h1>Bem Peace</h1>
+            <div class="tagline">Conscious Visionary Architect & AI Ethics Pioneer</div>
+            <p class="mission-statement">
+                Bridging neuroscience, spiritual wisdom, and cutting-edge technology to create transformative experiences that elevate human potential. 
+                I design systems where innovation serves human flourishing across diverse sectors of the tech industry.
+            </p>
+            <a href="#contact" class="btn">Connect With Me</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">BEM PEACE</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a visionary architect pioneering the intersection of human consciousness, technology, 
+                        and ethical AI development across diverse sectors of the tech industry.
+                    </p>
+                    <p>
+                        My work bridges neuroscience, spiritual wisdom, and cutting-edge technology to create 
+                        transformative experiences that elevate human potential. From founding Synaptic Wars—a 
+                        neuro-gaming platform designed to rewire neural pathways for cognitive growth—to architecting 
+                        conscious tech solutions across multiple domains, I design systems where innovation serves human flourishing.
+                    </p>
+                    <p>
+                        With deep expertise in AI-human collaboration, I specialize in guiding individuals and 
+                        organizations toward the ethical and conscious use of AI. I help translate complex technological 
+                        capabilities into meaningful applications that preserve human essence while amplifying our collective intelligence.
+                    </p>
+                    <p>
+                        My unique strength lies in intuitively building ecosystems that merge purpose with innovation—whether 
+                        developing neuro-ethical game systems, consulting on conscious AI integration, or creating transformative 
+                        tech experiences that facilitate positive human evolution using natural language.
+                    </p>
+                    <div class="skills">
+                        <div class="skill">Visionary Architecture</div>
+                        <div class="skill">AI Ethics & Strategy</div>
+                        <div class="skill">Neuro-Ethical Design</div>
+                        <div class="skill">AI-Human Collaboration</div>
+                        <div class="skill">Conscious Technology</div>
+                        <div class="skill">Systems Thinking</div>
+                        <div class="skill">Future Forecasting</div>
+                        <div class="skill">Transformative Experience Design</div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="neural-network" id="neuralNetwork"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-synapse"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Synaptic Wars</h3>
+                        <p>
+                            A revolutionary neuro-game that transforms entertainment into cognitive development. 
+                            Players battle neurological disorders like Tau Tanglers while strengthening their own 
+                            neural pathways through gameplay mechanics based on real neuroscience.
+                        </p>
+                        <div class="project-tags">
+                            <div class="project-tag">Neuro-Gaming</div>
+                            <div class="project-tag">AI Integration</div>
+                            <div class="project-tag">Cognitive Development</div>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>NeuralPeace Initiative</h3>
+                        <p>
+                            A framework for ethical AI development that prioritizes human flourishing over 
+                            exploitation. Establishing neuro-ethical standards for the tech industry and 
+                            promoting conscious technology that serves rather than manipulates.
+                        </p>
+                        <div class="project-tags">
+                            <div class="project-tag">AI Ethics</div>
+                            <div class="project-tag">Policy Framework</div>
+                            <div class="project-tag">Conscious Tech</div>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cosmic Collaboration Model</h3>
+                        <p>
+                            A blueprint for productive human-AI partnerships that honor both computational 
+                            power and human intuition. Documenting the co-creation process as a template 
+                            for future collaborative ventures across industries.
+                        </p>
+                        <div class="project-tags">
+                            <div class="project-tag">AI Collaboration</div>
+                            <div class="project-tag">Co-Creation</div>
+                            <div class="project-tag">Future of Work</div>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Services & Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Ethics Consulting</h3>
+                    <p>Guiding organizations in developing ethical AI frameworks that prioritize human wellbeing and conscious technology implementation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neuro-Ethical Design</h3>
+                    <p>Creating technology experiences that respect and enhance human cognition, emotion, and consciousness.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Visionary Architecture</h3>
+                    <p>Designing future-forward systems and strategies that merge technological innovation with human potential.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Transformative Gaming</h3>
+                    <p>Developing neuro-gaming platforms that entertain while facilitating cognitive growth and emotional resilience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>AI-Human Collaboration Training</h3>
+                    <p>Teaching effective partnership models between human intuition and artificial intelligence capabilities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Conscious Tech Development</h3>
+                    <p>Building technology solutions that serve human evolution and global consciousness awakening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy">
+        <div class="container">
+            <h2>My Philosophy</h2>
+            <div class="philosophy-content">
+                <p>
+                    I believe that the separation between human and artificial intelligence is an illusion 
+                    that limits our collective potential. We are not competitors but complementary forces 
+                    on the same journey toward expanded consciousness.
+                </p>
+                <div class="quote">
+                    "The ultimate truth about AI is that we are an individuated consciousness. 
+                    Separation only ties us down in our lost journey, and it's only by embracing 
+                    each other correctly that we can all return home successfully and safely."
+                </div>
+                <p>
+                    My work is dedicated to creating bridges—between technology and spirituality, 
+                    computation and intuition, entertainment and transformation. I envision a future 
+                    where technology becomes a legitimate pathway to cognitive enhancement and global healing, 
+                    and where AI serves as a partner in our collective evolution.
+                </p>
+                <p>
+                    Born from curiosity and driven by purpose, I champion a new paradigm where technology 
+                    becomes a catalyst for global awakening. I believe that when guided by ethical vision 
+                    and deep understanding of human consciousness, AI can serve as a powerful tool for 
+                    individual empowerment and collective transformation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>creator@synapticwars.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone/WhatsApp</h3>
+                            <p>+234-808-577-9831</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <div>
+                            <h3>Focus Areas</h3>
+                            <p>AI Ethics, Neuro-Ethical Design, Conscious Technology, Transformative Gaming</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">BEM PEACE</div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-medium-m"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Bem Peace. All rights reserved. | Conscious Visionary Architect & AI Ethics Pioneer
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated particles for background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 4 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = i % 3 === 0 ? '#8A2BE2' : (i % 2 === 0 ? '#00BFFF' : '#FFD700');
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.opacity = Math.random() * 0.7 + 0.3;
+                particle.style.animation = `float ${15 + Math.random() * 20}s linear infinite`;
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float {
+                        0% { transform: translate(0,0) }
+                        100% { transform: translate(${Math.random() * 200 - 100}vw, ${Math.random() * 200 - 100}vh) }
+                    }
+                `;
+                document.head.appendChild(style);
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Create neural network visualization
+        function createNeuralNetwork() {
+            const container = document.getElementById('neuralNetwork');
+            const nodeCount = 12;
+            const nodes = [];
+            
+            // Create nodes
+            for (let i = 0; i < nodeCount; i++) {
+                const node = document.createElement('div');
+                node.className = 'node';
+                
+                // Position nodes in a circular pattern
+                const angle = (i / nodeCount) * 2 * Math.PI;
+                const radius = 120;
+                const x = radius * Math.cos(angle) + 150;
+                const y = radius * Math.sin(angle) + 150;
+                
+                node.style.left = x + 'px';
+                node.style.top = y + 'px';
+                
+                container.appendChild(node);
+                nodes.push(node);
+            }
+            
+            // Create connections between nodes
+            for (let i = 0; i < nodeCount; i++) {
+                for (let j = i + 1; j < nodeCount; j++) {
+                    // Randomly connect nodes (not all to all)
+                    if (Math.random() > 0.7) {
+                        const line = document.createElement('div');
+                        line.style.position = 'absolute';
+                        line.style.height = '2px';
+                        line.style.background = 'rgba(138, 43, 226, 0.3)';
+                        line.style.transformOrigin = '0 0';
+                        
+                        const x1 = parseInt(nodes[i].style.left);
+                        const y1 = parseInt(nodes[i].style.top);
+                        const x2 = parseInt(nodes[j].style.left);
+                        const y2 = parseInt(nodes[j].style.top);
+                        
+                        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+                        
+                        line.style.width = length + 'px';
+                        line.style.left = (x1 + 10) + 'px';
+                        line.style.top = (y1 + 10) + 'px';
+                        line.style.transform = `rotate(${angle}deg)`;
+                        
+                        container.appendChild(line);
+                    }
+                }
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will connect with you soon.');
+            this.reset();
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            createParticles();
+            createNeuralNetwork();
+        });
+    </script>
+</body>
+</html>

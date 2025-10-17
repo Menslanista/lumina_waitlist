@@ -1,1 +1,1 @@
-# lumina_waitlist
+# lumina-waitlist
